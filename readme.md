@@ -4,7 +4,7 @@
 - For Elastic use localhost:5601
     - ES01 in port 9200
 
-- For JupterLab use localhost:8888
+- For JupyterLab use localhost:8888
     - master in 8080
     - workers in 8081 ans 8082
 
