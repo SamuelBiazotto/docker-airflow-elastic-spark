@@ -4,7 +4,6 @@ FROM cluster-base
 
 ARG spark_version=3.0.0
 ARG hadoop_version=2.7
-ARG elastic_version=7.12.0
 
 RUN apt-get update -y && \
     apt-get install -y curl && \
@@ -12,10 +11,7 @@ RUN apt-get update -y && \
     tar -xf spark.tgz && \
     mv spark-${spark_version}-bin-hadoop${hadoop_version} /usr/bin/ && \
     mkdir /usr/bin/spark-${spark_version}-bin-hadoop${hadoop_version}/logs && \
-    rm spark.tgz && \
-    curl https://artifacts.elastic.co/downloads/elasticsearch-hadoop/elasticsearch-hadoop-${elastic_version}.zip - elastic.zip && \
-    unzip elastic.zip && \
-    rm elastic.zip
+    rm spark.tgz
 
 ENV SPARK_HOME /usr/bin/spark-${spark_version}-bin-hadoop${hadoop_version}
 ENV SPARK_MASTER_HOST spark-master
