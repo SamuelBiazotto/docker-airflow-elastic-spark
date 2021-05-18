@@ -1,3 +1,7 @@
+# Requirements
+- Docker version: 20
+- Docker-compose version: 1.29
+
 # Introduction 
 - This project contains a docker runing a Apache Spark Cluster with JupyterLab, an Elastic stack with Kibana, and Apache Airflow
 
@@ -20,7 +24,10 @@
 
 # Start
 
-º Remember to give permission to folder and files *sudo chmod -R 777* 
+º Remember to give permission to folder and files with *sudo chmod -R 777* 
+º Need incresse memory for elastic search with the command: *sysctl -w vm.max_map_count=262144*
+º To see if the command works execute: *sysctl vm.max_map_count*
+
 
 1. First run *sudo ./build.sh* to download some dependencies (may take some time)
 
